@@ -31,6 +31,8 @@ $ api-spec-converter --from=openapi_3 --to=swagger_2 --syntax=yaml --order=alpha
 $ brew install go-swagger
 
 $ mkdir wecom-api
+$ cd wecom-api && go mod init wecom-api
+
 $ swagger generate client -f swagger.yaml -t wecom-api
 ```
 
@@ -47,5 +49,5 @@ nest g --no-spec controller wecom/department
 - 创建 DTO、Response 等结构体
 
 ```
-nest g --no-spec class wecom/department
+nest g --no-spec class wecom/department/Department
 ```

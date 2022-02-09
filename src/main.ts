@@ -11,6 +11,8 @@ async function bootstrap() {
     .setTitle('WeCom Open API')
     .setDescription('The WeCom API description')
     .setVersion('1.0')
+    .addTag('user')
+    .addTag('department')
     .addServer('https://qyapi.weixin.qq.com/cgi-bin')
     .addApiKey({
       type: 'apiKey',
