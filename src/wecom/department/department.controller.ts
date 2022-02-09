@@ -18,7 +18,7 @@ import { UpdateDepartmentDto } from './update-department-dto';
 export class DepartmentController {
   @Post('create')
   @ApiOperation({
-    operationId: 'create',
+    operationId: 'createDepartment',
     summary: '创建部门',
     externalDocs: {
       url: 'https://developer.work.weixin.qq.com/document/path/90205',
@@ -31,7 +31,7 @@ export class DepartmentController {
 
   @Post('update')
   @ApiOperation({
-    operationId: 'update',
+    operationId: 'updateDepartment',
     summary: '更新部门',
     externalDocs: {
       url: 'https://developer.work.weixin.qq.com/document/path/90206',
@@ -45,7 +45,7 @@ export class DepartmentController {
 
   @Get('delete')
   @ApiOperation({
-    operationId: 'delete',
+    operationId: 'deleteDepartment',
     summary: '删除部门',
     externalDocs: {
       url: 'https://developer.work.weixin.qq.com/document/path/90207',
@@ -65,7 +65,7 @@ export class DepartmentController {
 
   @Get('list')
   @ApiOperation({
-    operationId: 'list',
+    operationId: 'listDepartment',
     summary: '获取部门列表',
     externalDocs: {
       url: 'https://developer.work.weixin.qq.com/document/path/90208',
@@ -85,7 +85,7 @@ export class DepartmentController {
 
   @Get('simplelist')
   @ApiOperation({
-    operationId: 'simplelist',
+    operationId: 'simplelistDepartment',
     summary: '获取子部门ID列表',
     externalDocs: {
       url: 'https://developer.work.weixin.qq.com/document/path/95350',
@@ -104,7 +104,7 @@ export class DepartmentController {
 
   @Get('get')
   @ApiOperation({
-    operationId: 'get',
+    operationId: 'getDepartment',
     summary: '获取单个部门详情',
     externalDocs: {
       url: 'https://developer.work.weixin.qq.com/document/path/95351',

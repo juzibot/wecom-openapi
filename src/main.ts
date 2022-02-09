@@ -13,6 +13,7 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('user')
     .addTag('department')
+    .addTag('tag')
     .addServer('https://qyapi.weixin.qq.com/cgi-bin')
     .addApiKey({
       type: 'apiKey',
