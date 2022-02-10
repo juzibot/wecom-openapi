@@ -67,7 +67,7 @@ export class TagController {
 
   @Get('get')
   @ApiOperation({
-    operationId: 'gettagusers',
+    operationId: 'getTagUsers',
     summary: '获取标签成员',
     externalDocs: {
       url: 'https://developer.work.weixin.qq.com/document/path/90213',
@@ -86,7 +86,7 @@ export class TagController {
 
   @Post('addtagusers')
   @ApiOperation({
-    operationId: 'addtagusers',
+    operationId: 'addTagUsers',
     summary: '增加标签成员',
     externalDocs: {
       url: 'https://developer.work.weixin.qq.com/document/path/90214',
@@ -100,7 +100,7 @@ export class TagController {
 
   @Post('deltagusers')
   @ApiOperation({
-    operationId: 'deltagusers',
+    operationId: 'delTagUsers',
     summary: '删除标签成员',
     externalDocs: {
       url: 'https://developer.work.weixin.qq.com/document/path/90216',

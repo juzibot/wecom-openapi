@@ -87,7 +87,7 @@ export class DepartmentController {
 
   @Get('simplelist')
   @ApiOperation({
-    operationId: 'simplelistDepartment',
+    operationId: 'simpleListDepartment',
     summary: '获取子部门ID列表',
     externalDocs: {
       url: 'https://developer.work.weixin.qq.com/document/path/95350',
