@@ -30,9 +30,9 @@ async function bootstrap() {
     .addSecurityRequirements('api_key', [])
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('openapi', app, document);
 
-  fs.writeFileSync('./swagger-spec.yaml', dump(document, {}));
+  fs.writeFileSync('./openapi.yaml', dump(document, {}));
 
   await app.listen(3000);
 }
