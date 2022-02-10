@@ -7,7 +7,7 @@ import { GetGroupChatResponse } from './get-group-chat-response';
 import { ListGroupChatDto } from './list-group-chat-dto';
 import { ListGroupChatResponse } from './list-group-chat-response';
 
-@ApiTags('groupchat')
+@ApiTags('externalcontact')
 @Controller('externalcontact/groupchat')
 export class GroupchatController {
   @Post('list')
