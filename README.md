@@ -10,7 +10,7 @@ $ npm install
 
 ## Running the app
 
-启动后会生成 swagger spec 文件 `openapi.yaml`
+启动后会生成 swagger spec 文件 `openapi.yaml`，可以用浏览器打开 `http://localhost:3000/openapi` 查看 Swagger UI。
 
 ```bash
 $ npm run start
@@ -92,3 +92,18 @@ nest g --no-spec class department/Department
 - `operationId` 必须有，且唯一，驼峰格式。生成代码后作为方法名。
 - `summary` 必须有，是对 API 的简短介绍。
 - `externalDocs` 应该对应到企业微信的官方文档。
+
+## Swagger UI 调试
+
+### 鉴权
+
+企业微信 API 的鉴权方式是通过 querystring 中的 `access_token` 来实现的。
+在 Swagger UI 的右上角点击 `Authorize` 按钮，填入你的 `access_token` 即可对所有 API 进行鉴权。
+
+![](./screenshot/authorize_step.png)
+
+### Try Out
+
+由于浏览器跨域的问题，所以调试的时候无法直接访问企业问题的域名。本项目做了一个代理，可以选择`http://localhost:3000/cgi-bin` 这个 Server 来进行测试。
+
+![](./screenshot/proxy_step.png)
