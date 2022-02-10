@@ -20,8 +20,8 @@ async function bootstrap() {
     .setTitle('WeCom Open API')
     .setDescription('The WeCom API description')
     .setVersion('1.0')
-    .addServer('http://localhost:3000/cgi-bin')
     .addServer('https://qyapi.weixin.qq.com/cgi-bin')
+    .addServer('http://localhost:3000/cgi-bin')
     .addApiKey({
       type: 'apiKey',
       name: 'access_token',
