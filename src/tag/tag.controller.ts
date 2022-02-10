@@ -11,6 +11,7 @@ export class TagController {
     summary: '创建标签',
     externalDocs: {
       url: 'https://developer.work.weixin.qq.com/document/path/90210',
+      description: '官方文档',
     },
   })
   public create() {

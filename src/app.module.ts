@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { DepartmentController } from './wecom/department/department.controller';
-import { TagController } from './wecom/tag/tag.controller';
+import { DepartmentController } from './department/department.controller';
+import { TagController } from './tag/tag.controller';
 
 @Module({
   imports: [],

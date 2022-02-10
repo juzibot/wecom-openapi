@@ -38,8 +38,6 @@ $ swagger generate client -f swagger.yaml -t wecom-api
 
 ## Dev
 
-目前只支持 WeCom 平台，为了后续支持其他平台，所以把企业微信的内容放在 `src/wecom` 目录中。
-
 - 创建 controller 文件，声明 Swagger 文档
 
 ```

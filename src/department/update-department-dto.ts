@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export class UpdateDepartmentDto {
-  @ApiProperty({ type: 'number', description: '部门id' })
+  @ApiProperty({ type: 'number', required: true, description: '部门id' })
   id: number;
 
   @ApiProperty({
