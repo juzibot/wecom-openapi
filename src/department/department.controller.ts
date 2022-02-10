@@ -7,6 +7,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { Response } from '../response';
+import { CreateDepartmentDto } from './create-department-dto';
 import { CreateDepartmentResponse } from './create-department-response';
 import { GetDepartmentResponse } from './get-department-response';
 import { ListDepartmentResponse } from './list-department-response';
@@ -24,6 +25,7 @@ export class DepartmentController {
       url: 'https://developer.work.weixin.qq.com/document/path/90205',
     },
   })
+  @ApiBody({ type: CreateDepartmentDto })
   @ApiOkResponse({ type: CreateDepartmentResponse })
   public create() {
     return null;
