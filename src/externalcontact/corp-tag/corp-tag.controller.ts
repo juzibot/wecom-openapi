@@ -7,6 +7,7 @@ import { DelCorpTagDto } from './del-corp-tag-dto';
 import { EditCorpTagDto } from './edit-corp-tag-dto';
 import { GetCorpTagDto } from './get-corp-tag-dto';
 import { GetCorpTagResponse } from './get-corp-tag-response';
+import { MarkTagDto } from './mark-tag-dto';
 
 @ApiTags('externalcontact')
 @Controller('corp-tag')
@@ -69,6 +70,21 @@ export class CorpTagController {
   @ApiBody({ type: DelCorpTagDto })
   @ApiOkResponse({ type: Response })
   public del_corp_tag() {
+    return null;
+  }
+
+  @Post('mark_tag')
+  @ApiOperation({
+    operationId: 'mark_tag',
+  })
+  @ApiBody({
+    type: MarkTagDto,
+    description: `请确保external_userid是userid的外部联系人。
+                  add_tag和remove_tag不可同时为空。
+                  同一个标签组下现已支持多个标签`,
+  })
+  @ApiOkResponse({ type: Response })
+  public mark_tag() {
     return null;
   }
 }
