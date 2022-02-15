@@ -8,6 +8,8 @@ import {
 } from '@nestjs/swagger';
 import { Response } from '../response';
 import { BatchDeleteUserDto } from './batch-delete-user-dto';
+import { ConvertToOpenIdDto } from './convert-to-open-id-dto';
+import { ConvertToOpenIdResponse } from './convert-to-open-id-response';
 import { CreateUserDto } from './create-user-dto';
 import { GetActiveStatDto } from './get-active-stat-dto';
 import { GetActiveStatResponse } from './get-active-stat-response';
@@ -204,6 +206,22 @@ export class UserController {
   @ApiBody({ type: GetUserIdDto })
   @ApiOkResponse({ type: GetUserIdResponse })
   public getuserid() {
+    return null;
+  }
+
+  @Post('convert_to_openid')
+  @ApiOperation({
+    operationId: 'convertToOpenId',
+    summary: 'userid转openid',
+    description:
+      '该接口使用场景为企业支付，在使用企业红包和向员工付款时，需要自行将企业微信的userid转成openid。',
+    externalDocs: {
+      url: 'https://developer.work.weixin.qq.com/document/path/90202',
+    },
+  })
+  @ApiBody({ type: ConvertToOpenIdDto })
+  @ApiOkResponse({ type: ConvertToOpenIdResponse })
+  public convert_to_openid() {
     return null;
   }
 }
