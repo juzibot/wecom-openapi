@@ -6,13 +6,21 @@ import {
   ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
-import { GetExternalContactListDto } from './get-external-contact-list-dto';
-import { GetExternalContactListResponse } from './get-external-contact-list-response';
+import { BatchExternalContactDto } from './batch-external-contact-dto';
+import { BatchExternalContactResponse } from './batch-external-contact-response';
 import { GetExternalContactResponse } from './get-external-contact-response';
 
 @ApiTags('externalcontact')
 @Controller('externalcontact')
 export class ExternalcontactController {
+  @Get('list')
+  @ApiOperation({
+    operationId: '',
+  })
+  public list() {
+    return null;
+  }
+
   @Get('get')
   @ApiOperation({
     operationId: 'getExternalContact',
@@ -48,8 +56,8 @@ export class ExternalcontactController {
       url: 'https://developer.work.weixin.qq.com/document/path/92994',
     },
   })
-  @ApiBody({ type: GetExternalContactListDto })
-  @ApiOkResponse({ type: GetExternalContactListResponse })
+  @ApiBody({ type: BatchExternalContactDto })
+  @ApiOkResponse({ type: BatchExternalContactResponse })
   public getExternalContactList() {
     return null;
   }

@@ -2,9 +2,9 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Response } from '../response';
 import { ExternalContact, ExternalFollowUser } from './external-contact';
 
-export class GetExternalContactListResponseItemFollowInfo extends ExternalFollowUser {}
+export class BatchExternalContactResponseItemFollowInfo extends ExternalFollowUser {}
 
-export class GetExternalContactListResponseItem {
+export class BatchExternalContactResponseItem {
   @ApiProperty({
     type: ExternalContact,
     required: false,
@@ -21,9 +21,9 @@ export class GetExternalContactListResponseItem {
   follow_info: ExternalFollowUser;
 }
 
-export class GetExternalContactListResponse extends Response {
-  @ApiProperty({ type: GetExternalContactListResponseItem, isArray: true })
-  external_contact_list: GetExternalContactListResponseItem[];
+export class BatchExternalContactResponse extends Response {
+  @ApiProperty({ type: BatchExternalContactResponseItem, isArray: true })
+  external_contact_list: BatchExternalContactResponseItem[];
 
   @ApiProperty({
     type: 'string',

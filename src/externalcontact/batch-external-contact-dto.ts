@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class GetExternalContactListDto {
+export class BatchExternalContactDto {
   @ApiProperty({
     type: 'string',
     isArray: true,
