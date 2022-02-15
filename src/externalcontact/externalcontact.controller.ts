@@ -6,10 +6,12 @@ import {
   ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
+import { Response } from '../response';
 import { BatchExternalContactDto } from './batch-external-contact-dto';
 import { BatchExternalContactResponse } from './batch-external-contact-response';
 import { GetExternalContactResponse } from './get-external-contact-response';
 import { ListExternalContactResponse } from './list-external-contact-response';
+import { RemarkExternalContactDto } from './remark-external-contact-dto';
 
 @ApiTags('externalcontact')
 @Controller('externalcontact')
@@ -68,6 +70,21 @@ export class ExternalcontactController {
   @ApiBody({ type: BatchExternalContactDto })
   @ApiOkResponse({ type: BatchExternalContactResponse })
   public getExternalContactList() {
+    return null;
+  }
+
+  @Post('remark')
+  @ApiOperation({
+    operationId: 'remarkExternalContact',
+    summary: '修改客户备注信息',
+    description: '企业可通过此接口修改指定用户添加的客户的备注信息。',
+    externalDocs: {
+      url: 'https://developer.work.weixin.qq.com/document/path/92115',
+    },
+  })
+  @ApiBody({ type: RemarkExternalContactDto })
+  @ApiOkResponse({ type: Response })
+  public remark() {
     return null;
   }
 }

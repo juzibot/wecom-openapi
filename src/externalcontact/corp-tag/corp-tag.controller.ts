@@ -76,6 +76,11 @@ export class CorpTagController {
   @Post('mark_tag')
   @ApiOperation({
     operationId: 'mark_tag',
+    summary: '编辑客户企业标签',
+    description: '企业可通过此接口为指定成员的客户添加上由企业统一配置的标签。',
+    externalDocs: {
+      url: 'https://developer.work.weixin.qq.com/document/path/92118',
+    },
   })
   @ApiBody({
     type: MarkTagDto,
