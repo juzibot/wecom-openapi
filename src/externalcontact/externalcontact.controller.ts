@@ -9,14 +9,23 @@ import {
 import { BatchExternalContactDto } from './batch-external-contact-dto';
 import { BatchExternalContactResponse } from './batch-external-contact-response';
 import { GetExternalContactResponse } from './get-external-contact-response';
+import { ListExternalContactResponse } from './list-external-contact-response';
 
 @ApiTags('externalcontact')
 @Controller('externalcontact')
 export class ExternalcontactController {
   @Get('list')
   @ApiOperation({
-    operationId: '',
+    operationId: 'listExternalContact',
+    summary: '获取客户列表',
+    description:
+      '企业可通过此接口获取指定成员添加的客户列表。客户是指配置了客户联系功能的成员所添加的外部联系人。没有配置客户联系功能的成员，所添加的外部联系人将不会作为客户返回。',
+    externalDocs: {
+      url: 'https://developer.work.weixin.qq.com/document/path/92113',
+    },
   })
+  @ApiQuery({ name: 'userid', type: 'string', required: true })
+  @ApiOkResponse({ type: ListExternalContactResponse })
   public list() {
     return null;
   }
@@ -49,7 +58,7 @@ export class ExternalcontactController {
 
   @Post('batch/get_by_user')
   @ApiOperation({
-    operationId: 'getExternalContactList',
+    operationId: 'batchExternalContact',
     summary: '批量获取客户详情',
     description: '企业/第三方可通过此接口获取指定成员添加的客户信息列表。',
     externalDocs: {
