@@ -10,7 +10,7 @@ import { GetCorpTagResponse } from './get-corp-tag-response';
 import { MarkTagDto } from './mark-tag-dto';
 
 @ApiTags('externalcontact')
-@Controller('corp-tag')
+@Controller('externalcontact')
 export class CorpTagController {
   @Post('get_corp_tag_list')
   @ApiOperation({

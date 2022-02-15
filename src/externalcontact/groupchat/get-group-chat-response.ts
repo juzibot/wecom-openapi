@@ -28,9 +28,11 @@ class GroupChatMember {
   userid: string;
 
   @ApiProperty({
+    enum: [1, 2],
     required: false,
     type: 'number',
     example: 1,
+    description: `成员类型: 1 - 企业成员, 2 - 外部联系人`,
   })
   type: number;
 
@@ -67,6 +69,14 @@ class GroupChatMember {
     example: '张三丰',
   })
   name: string;
+
+  @ApiProperty({
+    name: 'unionid',
+    required: false,
+    type: 'string',
+    example: 'ozynqsulJFCZ2z1aYeS8h-nuasdAAA',
+  })
+  union_id: string;
 }
 
 class GroupChat {
