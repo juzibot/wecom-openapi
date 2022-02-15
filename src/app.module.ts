@@ -5,6 +5,7 @@ import { ExternalcontactController } from './externalcontact/externalcontact.con
 import { GroupchatController } from './externalcontact/groupchat/groupchat.controller';
 import { TagController } from './tag/tag.controller';
 import { UserController } from './user/user.controller';
+import { CorpController } from './user/corp/corp.controller';
 
 @Module({
   imports: [],
@@ -15,6 +16,7 @@ import { UserController } from './user/user.controller';
     GroupchatController,
     CorpTagController,
     UserController,
+    CorpController,
   ],
   providers: [],
 })

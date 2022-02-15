@@ -9,7 +9,13 @@ import {
 import { Response } from '../response';
 import { BatchDeleteUserDto } from './batch-delete-user-dto';
 import { CreateUserDto } from './create-user-dto';
+import { GetActiveStatDto } from './get-active-stat-dto';
+import { GetActiveStatResponse } from './get-active-stat-response';
+import { GetUserIdDto } from './get-user-id-dto';
+import { GetUserIdResponse } from './get-user-id-response';
 import { GetUserResponse } from './get-user-response';
+import { InviteUserDto } from './invite-user-dto';
+import { InviteUserResponse } from './invite-user-response';
 import { ListUsersResponse } from './list-users-response';
 import { SimpleListUserResponse } from './simple-list-user-response';
 import { UpdateUserDto } from './update-user-dto';
@@ -153,6 +159,51 @@ export class UserController {
   })
   @ApiOkResponse({ type: ListUsersResponse })
   public list() {
+    return null;
+  }
+
+  @Post('invite')
+  @ApiOperation({
+    operationId: 'inviteUser',
+    summary: '邀请成员',
+    description:
+      '企业可通过接口批量邀请成员使用企业微信，邀请后将通过短信或邮件下发通知。',
+    externalDocs: {
+      url: 'https://developer.work.weixin.qq.com/document/path/90975',
+    },
+  })
+  @ApiBody({ type: InviteUserDto })
+  @ApiOkResponse({ type: InviteUserResponse })
+  public invite() {
+    return null;
+  }
+
+  @Post('get_active_stat')
+  @ApiOperation({
+    operationId: 'getActiveStat',
+    summary: '获取企业活跃成员数',
+    externalDocs: {
+      url: 'https://developer.work.weixin.qq.com/document/path/92714',
+    },
+  })
+  @ApiBody({ type: GetActiveStatDto })
+  @ApiOkResponse({ type: GetActiveStatResponse })
+  public get_active_stat() {
+    return null;
+  }
+
+  @Post('getuserid')
+  @ApiOperation({
+    operationId: 'getUserId',
+    summary: '手机号获取userid',
+    description: '通过手机号获取其所对应的userid',
+    externalDocs: {
+      url: 'https://developer.work.weixin.qq.com/document/path/95402',
+    },
+  })
+  @ApiBody({ type: GetUserIdDto })
+  @ApiOkResponse({ type: GetUserIdResponse })
+  public getuserid() {
     return null;
   }
 }
