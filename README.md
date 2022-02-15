@@ -104,6 +104,6 @@ nest g --no-spec class department/Department
 
 ### Try Out
 
-由于浏览器跨域的问题，所以调试的时候无法直接访问企业问题的域名。本项目做了一个代理，可以选择`http://localhost:3000/cgi-bin` 这个 Server 来进行测试。
+由于浏览器跨域的问题，所以调试的时候无法直接访问企业微信的域名。本项目做了一个代理，可以选择`http://localhost:3000/cgi-bin` 这个 Server 来进行测试。
 
 ![](./screenshot/proxy_step.png)
