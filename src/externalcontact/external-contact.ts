@@ -3,7 +3,7 @@ import { ApiProperty } from '@nestjs/swagger';
 export class ExternalProfileAttrText {
   @ApiProperty({
     type: 'string',
-    required: false,
+    required: true,
     description: '文本属性内容，长度限制32个UTF8字符',
   })
   value: string;
@@ -12,14 +12,14 @@ export class ExternalProfileAttrText {
 export class ExternalProfileAttrWeb {
   @ApiProperty({
     type: 'string',
-    required: false,
+    required: true,
     description: '网页的url，必须包含http或者https头',
   })
   url: string;
 
   @ApiProperty({
     type: 'string',
-    required: false,
+    required: true,
     description: '网页的展示标题，长度限制12个UTF8字符',
   })
   title: string;
@@ -28,21 +28,21 @@ export class ExternalProfileAttrWeb {
 export class ExternalProfileAttrMiniprogram {
   @ApiProperty({
     type: 'string',
-    required: false,
+    required: true,
     description: '小程序appid，必须是有在本企业安装授权的小程序，否则会被忽略',
   })
   appid: string;
 
   @ApiProperty({
     type: 'string',
-    required: false,
+    required: true,
     description: '小程序的展示标题，长度限制12个UTF8字符',
   })
   pagepath: string;
 
   @ApiProperty({
     type: 'string',
-    required: false,
+    required: true,
     description: '小程序的页面路径',
   })
   title: string;
@@ -51,14 +51,14 @@ export class ExternalProfileAttrMiniprogram {
 export class ExternalProfileAttr {
   @ApiProperty({
     enum: [0, 1, 2],
-    required: false,
+    required: true,
     description: '属性类型: 0-文本 1-网页 2-小程序',
   })
   type: number;
 
   @ApiProperty({
     type: 'string',
-    required: false,
+    required: true,
     description: '属性名称： 需要先确保在管理端有创建该属性，否则会忽略',
   })
   name: string;

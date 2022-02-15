@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class GetGroupChatOpenGidtoChatIddto {
+export class GetGroupChatOpenGidtoChatIdDto {
   @ApiProperty({
     required: true,
     type: 'string',

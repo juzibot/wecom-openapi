@@ -4,6 +4,7 @@ import { CorpTagController } from './externalcontact/corp-tag/corp-tag.controlle
 import { ExternalcontactController } from './externalcontact/externalcontact.controller';
 import { GroupchatController } from './externalcontact/groupchat/groupchat.controller';
 import { TagController } from './tag/tag.controller';
+import { UserController } from './user/user.controller';
 
 @Module({
   imports: [],
@@ -13,6 +14,7 @@ import { TagController } from './tag/tag.controller';
     ExternalcontactController,
     GroupchatController,
     CorpTagController,
+    UserController,
   ],
   providers: [],
 })

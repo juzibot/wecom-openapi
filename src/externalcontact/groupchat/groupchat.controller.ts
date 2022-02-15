@@ -1,7 +1,7 @@
 import { Controller, Post } from '@nestjs/common';
 import { ApiBody, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { GetGroupChatDto } from './get-group-chat-dto';
-import { GetGroupChatOpenGidtoChatIddto } from './get-group-chat-open-gidto-chat-iddto';
+import { GetGroupChatOpenGidtoChatIdDto } from './get-group-chat-open-gidto-chat-iddto';
 import { GetGroupChatOpenGidtoChatIdresponse } from './get-group-chat-open-gidto-chat-idresponse';
 import { GetGroupChatResponse } from './get-group-chat-response';
 import { ListGroupChatDto } from './list-group-chat-dto';
@@ -51,7 +51,7 @@ export class GroupchatController {
       url: 'https://developer.work.weixin.qq.com/document/path/92122',
     },
   })
-  @ApiBody({ type: GetGroupChatOpenGidtoChatIddto })
+  @ApiBody({ type: GetGroupChatOpenGidtoChatIdDto })
   @ApiOkResponse({ type: GetGroupChatOpenGidtoChatIdresponse })
   public openGIDToChatID() {
     return null;
