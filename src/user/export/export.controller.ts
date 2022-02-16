@@ -4,6 +4,7 @@ import {
   ApiOkResponse,
   ApiOperation,
   ApiQuery,
+  ApiTags,
 } from '@nestjs/swagger';
 import { ExportDepartmentDto } from './export-department-dto';
 import { ExportTagUsersDto } from './export-tag-users-dto';
@@ -11,6 +12,7 @@ import { ExportUserDto } from './export-user-dto';
 import { ExportUserResponse } from './export-user-response';
 import { ExportUserResultResponse } from './export-user-result-response';
 
+@ApiTags('user')
 @Controller('export')
 export class ExportController {
   @Post('simple_user')
