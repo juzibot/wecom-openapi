@@ -15,7 +15,7 @@ import { BatchUserResultResponse } from './batch-user-result-response';
 export class BatchController {
   @Post('syncuser')
   @ApiOperation({
-    operationId: 'syncUser',
+    operationId: 'batchSyncUser',
     summary: '增量更新成员',
     description:
       '本接口以userid（帐号）为主键，增量更新企业微信通讯录成员。请先下载CSV模板(下载增量更新成员模版)，根据需求填写文件内容。    ',
@@ -31,7 +31,7 @@ export class BatchController {
 
   @Post('replaceuser')
   @ApiOperation({
-    operationId: 'replaceUser',
+    operationId: 'batchReplaceUser',
     summary: '全量覆盖成员',
     description:
       '本接口以userid为主键，全量覆盖企业的通讯录成员，任务完成后企业的通讯录成员与提交的文件完全保持一致。请先下载CSV文件(下载全量覆盖成员模版)，根据需求填写文件内容。',
@@ -47,7 +47,7 @@ export class BatchController {
 
   @Post('replaceparty')
   @ApiOperation({
-    operationId: 'replaceParty',
+    operationId: 'batchReplaceParty',
     summary: '全量覆盖部门',
     description:
       '本接口以partyid为键，全量覆盖企业的通讯录组织架构，任务完成后企业的通讯录组织架构与提交的文件完全保持一致。请先下载CSV文件(下载全量覆盖部门模版)，根据需求填写文件内容。',
@@ -69,7 +69,12 @@ export class BatchController {
       url: 'https://developer.work.weixin.qq.com/document/path/90983',
     },
   })
-  @ApiQuery({ name: 'jobid', type: 'string', required: true })
+  @ApiQuery({
+    name: 'jobid',
+    type: 'string',
+    required: true,
+    description: '异步任务id，最大长度为64字节',
+  })
   @ApiOkResponse({ type: BatchUserResultResponse })
   public getresult() {
     return null;

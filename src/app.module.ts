@@ -7,6 +7,7 @@ import { TagController } from './tag/tag.controller';
 import { UserController } from './user/user.controller';
 import { CorpController } from './user/corp/corp.controller';
 import { BatchController } from './user/batch/batch.controller';
+import { ExportController } from './user/export/export.controller';
 
 @Module({
   imports: [],
@@ -19,6 +20,7 @@ import { BatchController } from './user/batch/batch.controller';
     UserController,
     CorpController,
     BatchController,
+    ExportController,
   ],
   providers: [],
 })
