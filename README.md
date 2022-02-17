@@ -1,6 +1,6 @@
-# <img src="https://mac.qq.com/static/images/__qywx@3x-cgyVIzF.png" width="100">
+<img src="https://mac.qq.com/static/images/__qywx@3x-cgyVIzF.png" width="100">
 
-# <img src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWU-logo-clr.png" width="300">
+<img src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWU-logo-clr.png" width="300">
 
 # <img src="https://www.openapis.org/wp-content/uploads/sites/3/2018/02/OpenAPI_Logo_Pantone-1.png" width="300">
 
