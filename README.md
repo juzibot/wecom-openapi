@@ -1,4 +1,4 @@
-<img src="https://mac.qq.com/static/images/__qywx@3x-cgyVIzF.png" width="100">
+<img src="https://wwcdn.weixin.qq.com/node/wework/images/logo.c768c756ab.png" width="300">
 
 <img src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWU-logo-clr.png" width="300">
 
