@@ -1,3 +1,9 @@
+<div style="display: flex;">
+<img src="https://www.openapis.org/wp-content/uploads/sites/3/2018/02/OpenAPI_Logo_Pantone-1.png" />
+<img src="https://static1.smartbear.co/swagger/media/assets/images/swagger_logo.svg" />
+<img src="https://mac.qq.com/static/images/__qywx@3x-cgyVIzF.png" />
+</div>
+
 ## Description
 
 本项目旨在将企业微信的文档转义为 Swagger 文档，然后就可以生成各种编程语言的 Client 代码。
