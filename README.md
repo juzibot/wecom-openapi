@@ -1,12 +1,12 @@
 <img src="https://wwcdn.weixin.qq.com/node/wework/images/logo.c768c756ab.png" width="300">
-
+<img src="https://www.openapis.org/wp-content/uploads/sites/3/2018/02/OpenAPI_Logo_Pantone-1.png" width="300">
 <img src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWU-logo-clr.png" width="300">
 
-# <img src="https://www.openapis.org/wp-content/uploads/sites/3/2018/02/OpenAPI_Logo_Pantone-1.png" width="300">
+#
 
 ## Description
 
-本项目旨在将企业微信的文档转义为 Swagger 文档，然后就可以生成各种编程语言的 Client 代码。
+This project aims to translate the WeCom documentation into OpenAPI Specification, and then you can generate client code in various programming languages. Currently, we output version 3.x of OpenAPI Specification.
 
 ## Installation
 
@@ -16,56 +16,58 @@ $ npm install
 
 ## Running the app
 
-启动后会生成 swagger spec 文件 `openapi.yaml`，可以用浏览器打开 `http://localhost:3000/openapi` 查看 Swagger UI。
+When the app is running, the OpenAPI Specification file `openapi.yaml` will be generated, you can open `http://localhost:3000/openapi` to view Swagger UI.
 
 ```bash
 $ npm run start
 ```
 
-## Swagger 版本转换
+## Generating client code
 
-此项目生成的 swagger spec 文件是 swagger 3.0 版本，go-swaager 项目目前只支持 swagger 2.0 版本，所以需要进行版本转换。
+[swagger-codegen](https://github.com/swagger-api/swagger-codegen) is very popular tool to generate code from OpenAPI Specification. But if you use Golang, [go-swagge](https://github.com/go-swagger/go-swagger) is recommended.
 
-```
+### Example
+
+[go-swagge](https://github.com/go-swagger/go-swagger) is based on OpenAPI Specification 2.0, so you
+need to downgrade the version.
+
+```bash
 $ npm install -g api-spec-converter
 $ api-spec-converter --from=openapi_3 --to=swagger_2 --syntax=yaml --order=alpha ./openapi.yaml > swagger.yaml
 ```
 
-## 生成 golang 代码
+Then generate Golang code from `swagger.yaml` file.
 
 ```
 $ brew install go-swagger
 
-$ mkdir wecom-api
-$ cd wecom-api && go mod init wecom-api
+$ mkdir wecom-api && cd wecom-api
+
+# NOTE: you need run go mod init to create a go.mod file
+$ go mod init wecom-api
 
 $ swagger generate client -f swagger.yaml -t wecom-api
 ```
 
-## 生成其他语言的代码
-
-具体可参考 [swagger-codegen](https://github.com/swagger-api/swagger-codegen)
-
 ## Dev
 
-本项目是利用 NestJS 的 Swagger 集成来实现的，具体使用可参考 [OpenAPI(NestJS)](https://docs.nestjs.com/openapi/introduction)。
-NestJS CLI 的使用可参考 [CLI(NestJS)](https://docs.nestjs.com/cli/overview)
+This project is based on Swagger integration of NestJS, and you can refer to [OpenAPI(NestJS)](https://docs.nestjs.com/openapi/introduction) for more details.
 
-**API 的定义都放在 controller 文件中**
+### API Definition in controller files
 
 ```
 nest g --no-spec controller department
 ```
 
-**创建 DTO、Response 等结构体**
+### Create DTO and Response structure
 
-原则上需要将 API 的 DTO 和 Response 声明成独立的 Class。
+Separate structure are recommended because then you can get a name.
 
 ```
 nest g --no-spec class department/Department
 ```
 
-**主要的文档属性**
+### API Properties
 
 ```
   @ApiProperty({
@@ -74,42 +76,37 @@ nest g --no-spec class department/Department
     isArray: true,
     maxItems: 100,
     example: '["abel"]',
-    description: '用户ID列表。最多100个',
+    description: 'user id list, max length is 100',
   })
   userid_list: string[];
 ```
 
-- `required`, `type` 必须显示的声明出来
-- validation 相关的属性也应当显示的声明。
-- `description`, `example` 最好要有。
+- `required`, `type` is required.
+- `description`, `example` recommended。
 
 ```
   @ApiOperation({
     operationId: 'getGroupChat',
-    summary: '获取客户群详情',
-    description:
-      '通过客户群ID，获取详情。包括群名、群成员列表、群成员入群时间、入群方式。（客户群是由具有客户群使用权限的成员创建的外部群）',
+    summary: 'Get user group detail',
+    description: 'Get user group detail',
     externalDocs: {
       url: 'https://developer.work.weixin.qq.com/document/path/92122',
     },
   })
 ```
 
-- `operationId` 必须有，且唯一，驼峰格式。生成代码后作为方法名。
-- `summary` 必须有，是对 API 的简短介绍。
-- `externalDocs` 应该对应到企业微信的官方文档。
+- `operationId` Required, Unique, Is function name in genertation code.
+- `summary` Required
+- `externalDocs` Link to WeCom official document.
 
-## Swagger UI 调试
+## Swagger UI Try it out
 
-### 鉴权
+### Authorize
 
-企业微信 API 的鉴权方式是通过 querystring 中的 `access_token` 来实现的。
-在 Swagger UI 的右上角点击 `Authorize` 按钮，填入你的 `access_token` 即可对所有 API 进行鉴权。
-
+First, you need to get `access_token`, and pass it to `Authorize` button.
 ![](./screenshot/authorize_step.png)
 
-### Try Out
+### Proxy
 
-由于浏览器跨域的问题，所以调试的时候无法直接访问企业微信的域名。本项目做了一个代理，可以选择`http://localhost:3000/cgi-bin` 这个 Server 来进行测试。
-
+Browser has CORS issue, so you can use `http://localhost:3000/cgi-bin` to test.
 ![](./screenshot/proxy_step.png)
