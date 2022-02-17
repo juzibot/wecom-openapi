@@ -4,6 +4,8 @@
 
 #
 
+[简体中文](./README_ZH.md)
+
 ## Description
 
 This project aims to translate the WeCom documentation into OpenAPI Specification, and then you can generate client code in various programming languages. Currently, we output version 3.x of OpenAPI Specification.
