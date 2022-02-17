@@ -8,7 +8,7 @@
 
 ## Description
 
-This project aims to translate the WeCom documentation into OpenAPI Specification, and then you can generate client code in various programming languages. Currently, we output version 3.x of OpenAPI Specification.
+This project aims to translate the WeCom documentation into OpenAPI Specification, so that you can generate client code in various programming languages. Currently, we are using version 3.x of OpenAPI Specification.
 
 ## Installation
 
@@ -18,7 +18,7 @@ $ npm install
 
 ## Running the app
 
-When the app is running, the OpenAPI Specification file `openapi.yaml` will be generated, you can open `http://localhost:3000/openapi` to view Swagger UI.
+When the app is running, the OpenAPI Specification file `openapi.yaml` will be generated. You can open `http://localhost:3000/openapi` to view Swagger UI.
 
 ```bash
 $ npm run start
@@ -26,7 +26,7 @@ $ npm run start
 
 ## Generating client code
 
-[swagger-codegen](https://github.com/swagger-api/swagger-codegen) is very popular tool to generate code from OpenAPI Specification. But if you use Golang, [go-swagge](https://github.com/go-swagger/go-swagger) is recommended.
+[swagger-codegen](https://github.com/swagger-api/swagger-codegen) is a very popular tool to generate code from OpenAPI Specification. But if you are using Golang, [go-swagge](https://github.com/go-swagger/go-swagger) is recommended.
 
 ### Example
 
@@ -53,7 +53,7 @@ $ swagger generate client -f swagger.yaml -t wecom-api
 
 ## Dev
 
-This project is based on Swagger integration of NestJS, and you can refer to [OpenAPI(NestJS)](https://docs.nestjs.com/openapi/introduction) for more details.
+This project is based on Swagger integration of NestJS. Refer to [OpenAPI(NestJS)](https://docs.nestjs.com/openapi/introduction) for detail.
 
 ### API Definition in controller files
 
@@ -63,7 +63,7 @@ nest g --no-spec controller department
 
 ### Create DTO and Response structure
 
-Separate structure are recommended because then you can get a name.
+Usually, we declare DTOs and Responses in different classes.
 
 ```
 nest g --no-spec class department/Department
@@ -105,14 +105,10 @@ nest g --no-spec class department/Department
 
 ### Authorize
 
-First, you need to get `access_token`, and pass it to `Authorize` button.
+First, you need to get an `access_token` to authorize the api calls.
 ![](./screenshot/authorize_step.png)
 
 ### Proxy
 
-Browser has CORS issue, so you can use `http://localhost:3000/cgi-bin` to test.
+Browser has CORS issue, so we cannot access wx-work directly. So we made a proxy for you. To access, use `http://localhost:3000/cgi-bin`.
 ![](./screenshot/proxy_step.png)
-
-## FAQ
-
-[FAQ](./FAQ.md)
