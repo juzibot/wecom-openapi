@@ -112,3 +112,7 @@ First, you need to get `access_token`, and pass it to `Authorize` button.
 
 Browser has CORS issue, so you can use `http://localhost:3000/cgi-bin` to test.
 ![](./screenshot/proxy_step.png)
+
+## FAQ
+
+[FAQ](./FAQ.md)
