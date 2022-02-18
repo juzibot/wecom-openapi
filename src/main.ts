@@ -21,7 +21,7 @@ async function bootstrap() {
     .setDescription('The WeCom API description')
     .setVersion('1.0')
     .addServer('https://qyapi.weixin.qq.com/cgi-bin')
-    .addServer('http://localhost:3000/cgi-bin')
+    .addServer('/cgi-bin')
     .addApiKey({
       type: 'apiKey',
       name: 'access_token',
@@ -30,7 +30,7 @@ async function bootstrap() {
     .addSecurityRequirements('api_key', [])
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('openapi', app, document);
+  SwaggerModule.setup('/', app, document);
 
   fs.writeFileSync('./openapi.yaml', dump(document, {}));
 
