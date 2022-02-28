@@ -49,7 +49,7 @@ export class AddCorpTagDto {
   })
   order: number;
 
-  @ApiProperty({ type: AddCorpTagDto, required: false })
+  @ApiProperty({ type: AddCorpTagItem, required: false })
   tag: AddCorpTagItem;
 
   @ApiProperty({
