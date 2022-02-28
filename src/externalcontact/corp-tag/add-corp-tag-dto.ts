@@ -3,7 +3,7 @@ import { ApiProperty } from '@nestjs/swagger';
 export class AddCorpTagItem {
   @ApiProperty({
     type: 'string',
-    required: false,
+    required: true,
     description: '标签的名称',
     example: 'NAME1',
   })
@@ -49,7 +49,7 @@ export class AddCorpTagDto {
   })
   order: number;
 
-  @ApiProperty({ type: AddCorpTagItem, required: false })
+  @ApiProperty({ type: AddCorpTagItem, required: true, isArray: true })
   tag: AddCorpTagItem;
 
   @ApiProperty({
