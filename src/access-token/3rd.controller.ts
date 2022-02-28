@@ -18,7 +18,7 @@ import { GetSuiteTokenResponse } from './get-suite-token-response';
 export class ThirdPartyController {
   @Post('/get_corp_token')
   @ApiOperation({
-    operationId: 'GetCorpTokenByPermanentCode',
+    operationId: 'GetCorpToken',
     summary: '获取企业凭证',
     description:
       '第三方服务商在取得企业的永久授权码后，通过此接口可以获取到企业的access_token。获取后可通过通讯录、应用、消息等企业接口来运营这些应用。',
