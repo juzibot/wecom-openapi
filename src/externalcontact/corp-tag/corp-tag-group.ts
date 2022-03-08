@@ -20,6 +20,7 @@ export class CorpTag {
   @ApiProperty({
     type: 'number',
     required: false,
+    format: 'int32',
     description: '标签创建时间',
     example: '1557838797',
   })
@@ -30,6 +31,7 @@ export class CorpTag {
     required: false,
     minimum: 0,
     maximum: 2 ^ 32,
+    format: 'int32',
     description:
       '标签排序的次序值，order值大的排序靠前。有效的值范围是[0, 2^32)',
     example: '2',
@@ -65,6 +67,7 @@ export class CorpTagGroup {
   @ApiProperty({
     type: 'number',
     required: false,
+    format: 'int32',
     description: '标签组创建时间',
     example: '1557838797',
   })
@@ -75,6 +78,7 @@ export class CorpTagGroup {
     required: false,
     minimum: 0,
     maximum: 2 ^ 32,
+    format: 'int32',
     description:
       '	标签组排序的次序值，order值大的排序靠前。有效的值范围是[0, 2^32)',
     example: '2',
