@@ -172,7 +172,7 @@ export class ContactWay {
 
   @ApiProperty({
     type: 'boolean',
-    required: false,
+    required: true,
     description: '外部客户添加时是否无需验证，默认为true',
     example: true,
   })
@@ -210,7 +210,7 @@ export class ContactWay {
   @ApiProperty({
     type: 'number',
     format: 'int64',
-    required: false,
+    required: true,
     description: '是否临时会话模式，true表示使用临时会话模式，默认为false',
     example: true,
   })
