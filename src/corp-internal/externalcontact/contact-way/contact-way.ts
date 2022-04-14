@@ -208,7 +208,7 @@ export class ContactWay {
   party: number[];
 
   @ApiProperty({
-    type: 'number',
+    type: 'boolean',
     format: 'int64',
     required: true,
     description: '是否临时会话模式，true表示使用临时会话模式，默认为false',
