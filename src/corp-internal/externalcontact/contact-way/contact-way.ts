@@ -240,8 +240,6 @@ export class ContactWay {
   @ApiProperty({
     type: ContactWayConclusions,
     required: false,
-    description: '结束语，会话结束时自动发送给客户',
-    example: '',
   })
   conclusions: ContactWayConclusions;
 }
