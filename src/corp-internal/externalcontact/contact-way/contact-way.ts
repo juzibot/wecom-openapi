@@ -125,6 +125,7 @@ export class ContactWay {
 
   @ApiProperty({
     type: 'number',
+    format: 'int64',
     required: true,
     enum: [1, 2],
     description: '联系方式类型,1-单人, 2-多人',
@@ -134,6 +135,7 @@ export class ContactWay {
 
   @ApiProperty({
     type: 'number',
+    format: 'int64',
     enum: [1, 2],
     required: true,
     description: '场景，1-在小程序中联系，2-通过二维码联系',
@@ -143,6 +145,7 @@ export class ContactWay {
 
   @ApiProperty({
     type: 'number',
+    format: 'int64',
     required: false,
     enum: [1, 2, 3],
     description:
@@ -196,6 +199,7 @@ export class ContactWay {
 
   @ApiProperty({
     type: 'number',
+    format: 'int64',
     required: false,
     isArray: true,
     description: '使用该联系方式的部门id列表，只在type为2时有效',
@@ -205,6 +209,7 @@ export class ContactWay {
 
   @ApiProperty({
     type: 'number',
+    format: 'int64',
     required: false,
     description: '是否临时会话模式，true表示使用临时会话模式，默认为false',
     example: true,
@@ -213,6 +218,7 @@ export class ContactWay {
 
   @ApiProperty({
     type: 'number',
+    format: 'int64',
     required: false,
     description:
       '	临时会话二维码有效期，以秒为单位。该参数仅在is_temp为true时有效，默认7天，最多为14天',
@@ -222,6 +228,8 @@ export class ContactWay {
 
   @ApiProperty({
     type: 'number',
+    format: 'int64',
+
     required: false,
     description:
       '临时会话有效期，以秒为单位。该参数仅在is_temp为true时有效，默认为添加好友后24小时，最多为14天',
