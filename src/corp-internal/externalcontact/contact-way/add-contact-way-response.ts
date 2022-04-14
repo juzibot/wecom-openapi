@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Response } from '../../../response';
 
-export class CreateContactWayResponse extends Response {
+export class AddContactWayResponse extends Response {
   @ApiProperty({
     type: 'string',
     required: true,

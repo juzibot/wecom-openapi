@@ -1,9 +1,9 @@
 import { Controller, Get, Post } from '@nestjs/common';
 import { ApiBody, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Response } from '../../../response';
+import { AddContactWayDto } from './add-contact-way-dto';
+import { AddContactWayResponse } from './add-contact-way-response';
 import { CloseTempChatDto } from './close-temp-chat-dto';
-import { CreateContactWayDto } from './create-contact-way-dto';
-import { CreateContactWayResponse } from './create-contact-way-response';
 import { DeleteContactWayDto } from './delete-contact-way-dto';
 import { GetContactWayDto } from './get-contact-way-dto';
 import { GetContactWayResponse } from './get-contact-way-response';
@@ -24,8 +24,8 @@ export class ContactWayController {
       url: 'https://developer.work.weixin.qq.com/document/path/92572',
     },
   })
-  @ApiBody({ type: CreateContactWayDto, required: true })
-  @ApiOkResponse({ type: CreateContactWayResponse })
+  @ApiBody({ type: AddContactWayDto, required: true })
+  @ApiOkResponse({ type: AddContactWayResponse })
   public add_contact_way() {
     return null;
   }
@@ -68,7 +68,7 @@ export class ContactWayController {
     description:
       '更新企业配置的「联系我」二维码和「联系我」小程序按钮中的信息，如使用人员和备注等。',
   })
-  @ApiBody({ type: UpdateContactWayDto, required: true })
+  @ApiBody({ type: UpdateContactWayDto })
   @ApiOkResponse({ type: Response })
   public update_contact_way() {
     return null;

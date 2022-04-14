@@ -18,7 +18,7 @@ export class ListContactWayDto {
   end_time: number;
 
   @ApiProperty({
-    type: 'number',
+    type: 'string',
     required: false,
     description: '分页查询使用的游标，为上次请求返回的 next_cursor',
     example: 'CURSOR',

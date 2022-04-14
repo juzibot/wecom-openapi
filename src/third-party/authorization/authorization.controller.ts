@@ -23,11 +23,8 @@ export class AuthorizationController {
       url: 'https://developer.work.weixin.qq.com/document/path/90601',
     },
   })
-  @ApiQuery({ name: 'suite_access_token', required: true })
-  @ApiOkResponse({
-    type: GetPreAuthCodeResponse,
-    description: '获取预授权码成功',
-  })
+  @ApiQuery({ name: 'suite_access_token', type: 'string', required: true })
+  @ApiOkResponse({ type: GetPreAuthCodeResponse })
   public get_pre_auth_code() {
     return null;
   }

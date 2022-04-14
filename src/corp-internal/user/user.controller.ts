@@ -4,7 +4,7 @@ import {
   ApiOkResponse,
   ApiOperation,
   ApiQuery,
-  ApiTags
+  ApiTags,
 } from '@nestjs/swagger';
 import { Response } from '../../response';
 import { BatchDeleteUserDto } from './batch-delete-user-dto';

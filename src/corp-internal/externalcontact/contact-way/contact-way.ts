@@ -160,6 +160,14 @@ export class ContactWay {
   remark: string;
 
   @ApiProperty({
+    type: 'string',
+    required: true,
+    description: '联系二维码的URL，仅在scene为2时返回',
+    example: 'http://p.qpic.cn/wwhead/duc2TvpEgSdicZ9RrdUtBkv2UiaA/0',
+  })
+  qr_code: string;
+
+  @ApiProperty({
     type: 'boolean',
     required: false,
     description: '外部客户添加时是否无需验证，默认为true',
