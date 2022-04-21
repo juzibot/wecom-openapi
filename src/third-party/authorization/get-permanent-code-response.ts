@@ -4,6 +4,7 @@ import { Response } from '../../response';
 export class DealerCorpInfo {
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '',
     example: '',
   })
@@ -11,6 +12,7 @@ export class DealerCorpInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '',
     example: '',
   })
@@ -19,6 +21,7 @@ export class DealerCorpInfo {
 export class AuthCorpInfo {
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '授权方企业微信id',
     example: 'xxxx',
   })
@@ -26,6 +29,7 @@ export class AuthCorpInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '授权方企业名称，即企业简称',
     example: 'name',
   })
@@ -33,6 +37,7 @@ export class AuthCorpInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     enum: ['verified', 'unverified'],
     description: '授权方企业类型，认证号：verified, 注册号：unverified',
     example: 'verified',
@@ -41,6 +46,7 @@ export class AuthCorpInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '授权方企业方形头像',
     example: 'yyyyy',
   })
@@ -48,6 +54,7 @@ export class AuthCorpInfo {
 
   @ApiProperty({
     type: 'number',
+    required: false,
     description: '授权方企业用户规模',
     example: 50,
   })
@@ -55,6 +62,7 @@ export class AuthCorpInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description:
       '授权方企业的主体名称(仅认证或验证过的企业有)，即企业全称。企业微信将逐步回收该字段',
     example: 'full_name',
@@ -71,6 +79,7 @@ export class AuthCorpInfo {
   @ApiProperty({
     type: 'string',
     enum: [1, 2, 3, 4],
+    required: false,
     description:
       '企业类型，1. 企业; 2. 政府以及事业单位; 3. 其他组织, 4.团队号',
     example: 1,
@@ -79,6 +88,7 @@ export class AuthCorpInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '授权企业在微信插件（原企业号）的二维码，可用于关注微信插件',
     example: 'zzzzz',
   })
@@ -86,6 +96,7 @@ export class AuthCorpInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '企业规模。当企业未设置该属性时，值为空',
     example: '1-50人',
   })
@@ -93,6 +104,7 @@ export class AuthCorpInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '	企业所属行业。当企业未设置该属性时，值为空',
     example: 'IT服务',
   })
@@ -100,6 +112,7 @@ export class AuthCorpInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '企业所属子行业。当企业未设置该属性时，值为空',
     example: '计算机软件/硬件/信息服务',
   })
@@ -109,6 +122,7 @@ export class AuthCorpInfo {
 export class AuthInfoAgentPrivilege {
   @ApiProperty({
     type: 'number',
+    required: false,
     description: `权限等级。
     1:通讯录基本信息只读
     2:通讯录全部信息只读
@@ -123,6 +137,7 @@ export class AuthInfoAgentPrivilege {
   @ApiProperty({
     type: 'number',
     isArray: true,
+    required: false,
     description: '应用可见范围（部门）',
     example: [1, 2, 3],
   })
@@ -131,6 +146,7 @@ export class AuthInfoAgentPrivilege {
   @ApiProperty({
     type: 'string',
     isArray: true,
+    required: false,
     description: '应用可见范围（成员）',
     example: ['zhansan', 'lisi'],
   })
@@ -139,6 +155,7 @@ export class AuthInfoAgentPrivilege {
   @ApiProperty({
     type: 'number',
     isArray: true,
+    required: false,
     description: '应用可见范围（标签）',
     example: [1, 2, 3],
   })
@@ -147,6 +164,7 @@ export class AuthInfoAgentPrivilege {
   @ApiProperty({
     type: 'number',
     isArray: true,
+    required: false,
     description: '额外通讯录（部门）',
     example: [4, 5, 6],
   })
@@ -155,6 +173,7 @@ export class AuthInfoAgentPrivilege {
   @ApiProperty({
     type: 'string',
     isArray: true,
+    required: false,
     description: '额外通讯录（成员）',
     example: ['wangwu'],
   })
@@ -163,6 +182,7 @@ export class AuthInfoAgentPrivilege {
   @ApiProperty({
     type: 'number',
     isArray: true,
+    required: false,
     description: '额外通讯录（标签）',
     example: [4, 5, 6],
   })
@@ -171,6 +191,7 @@ export class AuthInfoAgentPrivilege {
 export class AuthInfoAgentSharedFrom {
   @ApiProperty({
     type: 'string',
+    required: false,
     description:
       '共享了应用的企业信息，仅当企业互联或者上下游共享应用触发的安装时才返',
     example: 'wwyyyyy',
@@ -180,6 +201,7 @@ export class AuthInfoAgentSharedFrom {
   @ApiProperty({
     type: 'number',
     enum: [0, 1],
+    required: false,
     description: '共享了途径，0表示企业互联，1表示上下游',
     example: 1,
   })
@@ -189,6 +211,7 @@ export class AuthInfoAgentSharedFrom {
 export class AuthInfoAgent {
   @ApiProperty({
     type: 'number',
+    required: false,
     description: '授权方应用id',
     example: '',
   })
@@ -196,6 +219,7 @@ export class AuthInfoAgent {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '授权方应用名字',
     example: '',
   })
@@ -203,6 +227,7 @@ export class AuthInfoAgent {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '授权方应用圆形头像',
     example: '',
   })
@@ -210,6 +235,7 @@ export class AuthInfoAgent {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '授权方应用方形头像',
     example: '',
   })
@@ -217,6 +243,7 @@ export class AuthInfoAgent {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '旧的多应用套件中的对应应用id，新开发者请忽略',
     example: '',
   })
@@ -224,6 +251,7 @@ export class AuthInfoAgent {
 
   @ApiProperty({
     type: 'number',
+    required: false,
     enum: [0, 1],
     description: '授权模式，0为管理员授权；1为成员授权',
     example: '',
@@ -232,6 +260,7 @@ export class AuthInfoAgent {
 
   @ApiProperty({
     type: 'boolean',
+    required: false,
     description: '是否为代开发自建应用',
     example: '',
   })
@@ -239,6 +268,7 @@ export class AuthInfoAgent {
 
   @ApiProperty({
     type: 'boolean',
+    required: false,
     description:
       '来自第三方应用接口唤起,仅通过第三方应用添加自建应用 获取授权链接授权代开发自建应用时，才返回该字段',
     example: '',
@@ -247,15 +277,13 @@ export class AuthInfoAgent {
 
   @ApiProperty({
     type: AuthInfoAgentPrivilege,
-    description: '应用对应的权限',
-    example: '',
+    required: false,
   })
   privilege: AuthInfoAgentPrivilege;
 
   @ApiProperty({
     type: AuthInfoAgentSharedFrom,
-    description: '',
-    example: '',
+    required: false,
   })
   shared_from: AuthInfoAgentSharedFrom;
 }
@@ -263,9 +291,8 @@ export class AuthInfoAgent {
 export class AuthInfo {
   @ApiProperty({
     type: AuthInfoAgent,
+    required: false,
     isArray: true,
-    description:
-      '授权的应用信息，注意是一个数组，但仅旧的多应用套件授权时会返回多个agent，对新的单应用授权，永远只返回一个agent',
   })
   agent: AuthInfoAgent[];
 }
@@ -273,6 +300,7 @@ export class AuthInfo {
 export class AuthUserInfo {
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '授权管理员的userid，可能为空',
     example: '',
   })
@@ -280,6 +308,7 @@ export class AuthUserInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '授权管理员的open_userid，可能为空',
     example: '',
   })
@@ -287,6 +316,7 @@ export class AuthUserInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '授权管理员的name，可能为空',
     example: '',
   })
@@ -294,6 +324,7 @@ export class AuthUserInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '授权管理员的头像url，可能为空',
     example: '',
   })
@@ -303,6 +334,7 @@ export class AuthUserInfo {
 export class RegisterCodeInfo {
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '注册码',
     example: '',
   })
@@ -310,6 +342,7 @@ export class RegisterCodeInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '推广包ID',
     example: '',
   })
@@ -317,6 +350,7 @@ export class RegisterCodeInfo {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '仅当获取注册码指定该字段时才返回',
     example: '',
   })
@@ -326,6 +360,7 @@ export class RegisterCodeInfo {
 export class GetPermanentCodeResponse extends Response {
   @ApiProperty({
     type: 'string',
+    required: false,
     description:
       '授权方（企业）access_token,最长为512字节。代开发自建应用安装时不返回。',
     example: '',
@@ -334,6 +369,7 @@ export class GetPermanentCodeResponse extends Response {
 
   @ApiProperty({
     type: 'number',
+    required: false,
     description:
       '授权方（企业）access_token超时时间（秒）。代开发自建应用安装时不返回。',
     example: '',
@@ -342,6 +378,7 @@ export class GetPermanentCodeResponse extends Response {
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '企业微信永久授权码,最长为512字节',
     example: '',
   })
@@ -349,42 +386,37 @@ export class GetPermanentCodeResponse extends Response {
 
   @ApiProperty({
     type: DealerCorpInfo,
-    description: '',
-    example: '',
+    required: false,
   })
   dealer_corp_info: DealerCorpInfo;
 
   @ApiProperty({
     type: AuthCorpInfo,
-    description: '授权方企业信息',
-    example: '',
+    required: false,
   })
   auth_corp_info: AuthCorpInfo;
 
   @ApiProperty({
     type: AuthInfo,
-    description:
-      '授权信息。如果是通讯录应用，且没开启实体应用，是没有该项的。通讯录应用拥有企业通讯录的全部信息读写权限',
-    example: '',
+    required: false,
   })
   auth_info: AuthInfo;
 
   @ApiProperty({
     type: AuthUserInfo,
-    description: '',
-    example: '',
+    required: false,
   })
   auth_user_info: AuthUserInfo;
 
   @ApiProperty({
     type: RegisterCodeInfo,
-    description: '',
-    example: '',
+    required: false,
   })
   register_code_info: RegisterCodeInfo;
 
   @ApiProperty({
     type: 'string',
+    required: false,
     description: '安装应用时，扫码或者授权链接中带的state值。',
     example: 'state001',
   })
