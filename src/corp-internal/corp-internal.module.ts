@@ -10,6 +10,7 @@ import { BatchController } from './user/batch/batch.controller';
 import { CorpController } from './user/corp/corp.controller';
 import { ExportController } from './user/export/export.controller';
 import { UserController } from './user/user.controller';
+import { MessageModule } from './externalcontact/message/message.module';
 
 @Module({
   controllers: [
@@ -25,5 +26,6 @@ import { UserController } from './user/user.controller';
     AccessTokenController,
     ContactWayController,
   ],
+  imports: [MessageModule],
 })
 export class CorpInternalModule {}
