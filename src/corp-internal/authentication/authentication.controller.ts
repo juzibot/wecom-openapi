@@ -9,7 +9,7 @@ import {ScanAuthenticationResponse} from "./scan-authentication-response";
 import {WebAuthenticationResponse} from "./web-authentication-response";
 
 @ApiTags('authentication')
-@Controller('authentication')
+@Controller('user')
 export class AuthenticationController {
     @Get('getuserinfo')
     @ApiOperation({
