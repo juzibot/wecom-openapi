@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Response } from '../../response';
 
-export class WebAuthenticationResponse extends Response {
+export class AuthenticationResponse extends Response {
     @ApiProperty({
         type: 'string',
         required: false,

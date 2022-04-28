@@ -26,7 +26,7 @@ import {AuthenticationController} from "./authentication/authentication.controll
     ExportController,
     AccessTokenController,
     ContactWayController,
-      AuthenticationController,
+    AuthenticationController,
   ],
   imports: [MessageModule],
 })
