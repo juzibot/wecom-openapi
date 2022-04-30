@@ -8,5 +8,5 @@ export class UserIdToOpenUserIdDto {
     required: true,
     example: '["xxx", "yyy"]',
   })
-  user_list: string[];
+  userid_list: string[];
 }
