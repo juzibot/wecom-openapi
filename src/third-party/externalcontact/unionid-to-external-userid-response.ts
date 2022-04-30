@@ -20,7 +20,7 @@ export class ExternalUserIdInfoItem {
 
 export class UnionIdToExternalUserIdResponse extends Response {
   @ApiProperty({
-    type: 'string',
+    type: ExternalUserIdInfoItem,
     required: false,
     isArray: true,
     description:
