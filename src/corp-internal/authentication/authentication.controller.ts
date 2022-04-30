@@ -13,7 +13,7 @@ export class AuthenticationController {
     @Get('getuserinfo')
     @ApiOperation({
         operationId: 'web getuserinfo',
-        summary: '获取web访问用户身份',
+        summary: '获取访问用户身份',
         externalDocs: {
             url: 'https://developer.work.weixin.qq.com/document/path/91023',
         },
