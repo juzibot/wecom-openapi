@@ -13,7 +13,7 @@ import { ExchangeExternalUserIdResponse } from './exchange-external-userid-respo
 @ApiTags('externalcontact')
 @Controller('externalcontact')
 export class ExternalcontactController {
-  @Post('externalcontact/to_service_external_userid')
+  @Post('to_service_external_userid')
   @ApiOperation({
     operationId: 'to_service_external_userid',
     summary: '代开发应用external_userid转换',
