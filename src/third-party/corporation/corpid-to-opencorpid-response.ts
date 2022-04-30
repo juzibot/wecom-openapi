@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Response } from '../../response';
-export class CorpIdToOpenCorpIdDto extends Response {
+
+export class CorpIdToOpenCorpIdResponse extends Response {
   @ApiProperty({
     type: 'string',
     required: false,
