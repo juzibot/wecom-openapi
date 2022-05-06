@@ -41,6 +41,8 @@ $ api-spec-converter --from=openapi_3 --to=swagger_2 --syntax=yaml --order=alpha
 Then generate Golang code from `swagger.yaml` file.
 
 ```
+$ brew tap go-swagger/go-swagger
+
 $ brew install go-swagger
 
 $ mkdir wecom-api && cd wecom-api

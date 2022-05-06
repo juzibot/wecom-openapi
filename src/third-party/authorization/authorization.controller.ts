@@ -1,4 +1,4 @@
-import { Controller, Post } from '@nestjs/common';
+import { Controller, Post, Get } from '@nestjs/common';
 import {
   ApiBody,
   ApiOkResponse,
@@ -6,9 +6,16 @@ import {
   ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
+import { GetUserIdResponse } from 'src/corp-internal/user/get-user-id-response';
+import { CorpIdToOpenCorpIdResponse } from './corpid-to-opencorpid-response';
+import { CorpIdToOpenCorpIdDto } from './corpId-to-opencorpid.dto';
+import { GetLoginInfoResponse } from './get-login-info-response';
+import { GetLoginInfoDto } from './get-login-info.dto';
 import { GetPermanentCodeDto } from './get-permanent-code-dto';
 import { GetPermanentCodeResponse } from './get-permanent-code-response';
 import { GetPreAuthCodeResponse } from './get-pre-auth-code-response';
+import { UserIdToOpenUserIdDto } from './userid-to-openid.dto';
+import { UserIdToOpenUserIdResponse } from './userid-to-openuserid.response';
 
 @ApiTags('third-party')
 @Controller('service')
@@ -42,6 +49,37 @@ export class AuthorizationController {
   @ApiBody({ type: GetPermanentCodeDto, required: true })
   @ApiOkResponse({ type: GetPermanentCodeResponse })
   public get_permanent_code() {
+    return null;
+  }
+
+  @Post('/get_login_info')
+  @ApiOperation({
+    operationId: 'get_login_info',
+    summary: '获取企业登录信息',
+    description: '第三方应用，获取扫码登录用户信息。',
+    externalDocs: {
+      url: 'https://developer.work.weixin.qq.com/document/path/91125',
+    },
+  })
+  @ApiBody({ type: GetLoginInfoDto, required: true })
+  @ApiOkResponse({ type: GetLoginInfoResponse })
+  public get_login_info() {
+    return null;
+  }
+
+  @Post('/corpid_to_opencorpid')
+  @ApiOperation({
+    operationId: 'corpid_to_opencorpid',
+    summary: '获取企业微信开放平台的corpid',
+    description: '第三方应用，获取企业微信开放平台的corpid。',
+    externalDocs: {
+      url: 'https://developer.work.weixin.qq.com/document/path/95604',
+    },
+  })
+  @ApiQuery({ name: 'provider_access_token', type: 'string', required: true })
+  @ApiBody({ type: CorpIdToOpenCorpIdDto, required: true })
+  @ApiOkResponse({ type: CorpIdToOpenCorpIdResponse })
+  public corpid_to_opencorpid() {
     return null;
   }
 }
