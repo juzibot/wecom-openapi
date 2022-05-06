@@ -11,6 +11,7 @@ import { CorpController } from './user/corp/corp.controller';
 import { ExportController } from './user/export/export.controller';
 import { UserController } from './user/user.controller';
 import { MessageModule } from './externalcontact/message/message.module';
+import { MediaModule } from './media/media.module';
 
 @Module({
   controllers: [
@@ -26,6 +27,6 @@ import { MessageModule } from './externalcontact/message/message.module';
     AccessTokenController,
     ContactWayController,
   ],
-  imports: [MessageModule],
+  imports: [MessageModule, MediaModule],
 })
 export class CorpInternalModule {}
