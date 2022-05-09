@@ -1,8 +1,16 @@
 import { Controller, Get, Post } from '@nestjs/common';
-import { ApiOkResponse, ApiOperation, ApiQuery } from '@nestjs/swagger';
+import {
+  ApiBody,
+  ApiConsumes,
+  ApiOkResponse,
+  ApiOperation,
+  ApiQuery,
+  ApiTags,
+} from '@nestjs/swagger';
 import { UploadImgResponse } from './upload-img-response';
 import { UploadResponse } from './upload-response';
 
+@ApiTags('media')
 @Controller('media')
 export class MediaController {
   @Post('/upload')
@@ -20,6 +28,20 @@ export class MediaController {
     required: true,
     type: 'string',
     enum: ['image', 'voice', 'video', 'file'],
+  })
+  @ApiConsumes('multipart/form-data')
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        comment: { type: 'string' },
+        outletId: { type: 'integer' },
+        file: {
+          type: 'file',
+          format: 'binary',
+        },
+      },
+    },
   })
   @ApiOkResponse({
     type: UploadResponse,

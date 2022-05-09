@@ -1,4 +1,4 @@
-import { Controller, Post, Get } from '@nestjs/common';
+import { Controller, Post } from '@nestjs/common';
 import {
   ApiBody,
   ApiOkResponse,
@@ -6,7 +6,6 @@ import {
   ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
-import { GetUserIdResponse } from 'src/corp-internal/user/get-user-id-response';
 import { CorpIdToOpenCorpIdResponse } from './corpid-to-opencorpid-response';
 import { CorpIdToOpenCorpIdDto } from './corpId-to-opencorpid.dto';
 import { GetLoginInfoResponse } from './get-login-info-response';
@@ -14,8 +13,6 @@ import { GetLoginInfoDto } from './get-login-info.dto';
 import { GetPermanentCodeDto } from './get-permanent-code-dto';
 import { GetPermanentCodeResponse } from './get-permanent-code-response';
 import { GetPreAuthCodeResponse } from './get-pre-auth-code-response';
-import { UserIdToOpenUserIdDto } from './userid-to-openid.dto';
-import { UserIdToOpenUserIdResponse } from './userid-to-openuserid.response';
 
 @ApiTags('third-party')
 @Controller('service')
