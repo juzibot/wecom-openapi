@@ -12,6 +12,7 @@ import { ExportController } from './user/export/export.controller';
 import { UserController } from './user/user.controller';
 import { MessageModule } from './externalcontact/message/message.module';
 import {AuthenticationController} from "./authentication/authentication.controller";
+import { MediaModule } from './media/media.module';
 
 @Module({
   controllers: [
@@ -28,6 +29,6 @@ import {AuthenticationController} from "./authentication/authentication.controll
     ContactWayController,
     AuthenticationController,
   ],
-  imports: [MessageModule],
+  imports: [MessageModule, MediaModule],
 })
 export class CorpInternalModule {}
