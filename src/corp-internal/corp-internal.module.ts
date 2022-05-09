@@ -11,6 +11,7 @@ import { CorpController } from './user/corp/corp.controller';
 import { ExportController } from './user/export/export.controller';
 import { UserController } from './user/user.controller';
 import { MessageModule } from './externalcontact/message/message.module';
+import {AuthenticationController} from "./authentication/authentication.controller";
 import { MediaModule } from './media/media.module';
 
 @Module({
@@ -26,6 +27,7 @@ import { MediaModule } from './media/media.module';
     ExportController,
     AccessTokenController,
     ContactWayController,
+    AuthenticationController,
   ],
   imports: [MessageModule, MediaModule],
 })

@@ -11,7 +11,6 @@ export class Response {
 
   @ApiProperty({
     type: 'string',
-    format: 'int64',
     required: false,
     description: '错误信息',
   })
