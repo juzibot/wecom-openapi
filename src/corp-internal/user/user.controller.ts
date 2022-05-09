@@ -15,7 +15,6 @@ import { GetActiveStatDto } from './get-active-stat-dto';
 import { GetActiveStatResponse } from './get-active-stat-response';
 import { GetUserIdDto } from './get-user-id-dto';
 import { GetUserIdResponse } from './get-user-id-response';
-import { GetUserInfoResponse } from './get-user-info-response';
 import { GetUserResponse } from './get-user-response';
 import { InviteUserDto } from './invite-user-dto';
 import { InviteUserResponse } from './invite-user-response';
@@ -223,21 +222,6 @@ export class UserController {
   @ApiBody({ type: ConvertToOpenIdDto })
   @ApiOkResponse({ type: ConvertToOpenIdResponse })
   public convert_to_openid() {
-    return null;
-  }
-
-  @Get('/getuserinfo')
-  @ApiOperation({
-    operationId: 'getuserinfo',
-    summary: '获取访问用户身份',
-    description: '获取扫码登录的用户身份',
-    externalDocs: {
-      url: 'hhttps://developer.work.weixin.qq.com/document/path/91437',
-    },
-  })
-  @ApiQuery({ name: 'code', type: 'string' })
-  @ApiOkResponse({ type: GetUserInfoResponse })
-  public getuserinfo() {
     return null;
   }
 }
