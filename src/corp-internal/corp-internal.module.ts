@@ -13,6 +13,7 @@ import { BatchController } from './user/batch/batch.controller';
 import { CorpController } from './user/corp/corp.controller';
 import { ExportController } from './user/export/export.controller';
 import { UserController } from './user/user.controller';
+import { JsapiTicketModule } from './jsapi_ticket/jsapi_ticket.module';
 
 @Module({
   controllers: [
@@ -29,6 +30,6 @@ import { UserController } from './user/user.controller';
     ContactWayController,
     AuthenticationController,
   ],
-  imports: [MessageModule, MediaModule],
+  imports: [MessageModule, MediaModule, JsapiTicketModule],
 })
 export class CorpInternalModule {}
