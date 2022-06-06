@@ -70,14 +70,14 @@ export class AuthCorpInfo {
   corp_full_name: string;
 
   @ApiProperty({
-    type: 'string',
+    type: 'number',
     description: '认证到期时间',
     example: 1431775834,
   })
   verified_end_time: number;
 
   @ApiProperty({
-    type: 'string',
+    type: 'number',
     enum: [1, 2, 3, 4],
     required: false,
     description:
@@ -242,12 +242,12 @@ export class AuthInfoAgent {
   square_logo_url: string;
 
   @ApiProperty({
-    type: 'string',
+    type: 'number',
     required: false,
     description: '旧的多应用套件中的对应应用id，新开发者请忽略',
     example: '',
   })
-  appid: string;
+  appid: number;
 
   @ApiProperty({
     type: 'number',
