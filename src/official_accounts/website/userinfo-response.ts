@@ -63,6 +63,7 @@ export class UserinfoResponse extends Response {
 
   @ApiProperty({
     type: 'string',
+    isArray: true,
     description: '用户特权信息，json 数组，如微信沃卡用户为（chinaunicom）',
     required: false,
     example: ['PRIVILEGE1', 'PRIVILEGE2'],
