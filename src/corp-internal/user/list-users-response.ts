@@ -1,13 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Response } from '../../response';
-import { GetUserResponseDetail } from './get-user-response';
+import { GetUserResponse } from './get-user-response';
 
 export class ListUsersResponse extends Response {
   @ApiProperty({
-    type: GetUserResponseDetail,
+    type: GetUserResponse,
     isArray: true,
     required: false,
     description: '成员列表',
   })
-  userlist: GetUserResponseDetail[];
+  userlist: GetUserResponse[];
 }
