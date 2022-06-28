@@ -1,4 +1,4 @@
-import { Controller, Post } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import {
   ApiBody,
   ApiOkResponse,
@@ -15,6 +15,8 @@ import { GetPermanentCodeResponse } from './get-permanent-code-response';
 import { GetPreAuthCodeResponse } from './get-pre-auth-code-response';
 import { GetCustomizedAuthUrlBody } from './customized-auth-url.dto';
 import { GetCustomizedAuthUrlResponse } from './customized-auth-url-response';
+import { GetUserInfo3rdResponse } from './get-user-info-3rd-response';
+
 @ApiTags('third-party')
 @Controller('service')
 export class AuthorizationController {
@@ -94,6 +96,26 @@ export class AuthorizationController {
   @ApiBody({ type: GetCustomizedAuthUrlBody, required: true })
   @ApiOkResponse({ type: GetCustomizedAuthUrlResponse })
   public get_customized_auth_url() {
+    return null;
+  }
+
+  @Get('/getuserinfo3rd')
+  @ApiOperation({
+    operationId: 'getuserinfo3rd',
+    summary: '获取访问用户身份',
+    description: '第三方应用，获取访问用户身份。',
+    externalDocs: {
+      url: 'https://developer.work.weixin.qq.com/document/path/91121',
+    },
+  })
+  @ApiQuery({
+    name: 'code',
+    required: true,
+    type: 'string',
+    description: '通过成员授权获取到的code',
+  })
+  @ApiOkResponse({ type: GetUserInfo3rdResponse })
+  public getuserinfo3rd() {
     return null;
   }
 }

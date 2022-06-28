@@ -3,11 +3,11 @@ import { ApiProperty } from '@nestjs/swagger';
 export class GetCustomizedAuthUrlBody {
   @ApiProperty({
     type: 'string',
-    description: 'stage值',
+    description: 'state值',
     required: true,
-    example: 'stage_value',
+    example: 'state_value',
   })
-  stage: string;
+  state: string;
 
   @ApiProperty({
     type: 'string',

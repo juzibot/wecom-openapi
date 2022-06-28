@@ -87,6 +87,16 @@ export class ExternalProfileAttr {
   miniprogram: ExternalProfileAttrMiniprogram;
 }
 
+export class ExternalAttrs {
+  @ApiProperty({
+    type: ExternalProfileAttr,
+    required: false,
+    isArray: true,
+    description: '对外属性列表',
+  })
+  attrs: ExternalProfileAttr[];
+}
+
 export class ExternalProfileWechatChannels {
   @ApiProperty({
     type: 'string',
@@ -131,7 +141,7 @@ export class ExternalProfile {
     description:
       '视频号属性。须从企业绑定到企业微信的视频号中选择，可在“我的企业”页中查看绑定的视频号。第三方仅通讯录应用可获取；对于非第三方创建的成员，第三方通讯录应用也不可获取。',
   })
-  wechat_channels: null;
+  wechat_channels: ExternalProfileWechatChannels;
 }
 
 export class ExternalFollowUserTag {
@@ -254,6 +264,14 @@ export class ExternalFollowUser {
     example: '外联二维码1',
   })
   state: string;
+
+  @ApiProperty({
+    type: ExternalProfileWechatChannels,
+    required: false,
+    description:
+      '视频号属性。须从企业绑定到企业微信的视频号中选择，可在“我的企业”页中查看绑定的视频号。第三方仅通讯录应用可获取；对于非第三方创建的成员，第三方通讯录应用也不可获取。',
+  })
+  wechat_channels: ExternalProfileWechatChannels;
 }
 
 export class ExternalContact {
