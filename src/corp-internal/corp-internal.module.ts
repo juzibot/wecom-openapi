@@ -14,6 +14,7 @@ import { CorpController } from './user/corp/corp.controller';
 import { ExportController } from './user/export/export.controller';
 import { UserController } from './user/user.controller';
 import { JsapiTicketModule } from './jsapi_ticket/jsapi_ticket.module';
+import { MessageController } from './message/message.controller';
 
 @Module({
   controllers: [
@@ -29,6 +30,7 @@ import { JsapiTicketModule } from './jsapi_ticket/jsapi_ticket.module';
     AccessTokenController,
     ContactWayController,
     AuthenticationController,
+    MessageController,
   ],
   imports: [MessageModule, MediaModule, JsapiTicketModule],
 })
