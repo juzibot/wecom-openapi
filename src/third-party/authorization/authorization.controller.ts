@@ -13,6 +13,8 @@ import { GetLoginInfoDto } from './get-login-info.dto';
 import { GetPermanentCodeDto } from './get-permanent-code-dto';
 import { GetPermanentCodeResponse } from './get-permanent-code-response';
 import { GetPreAuthCodeResponse } from './get-pre-auth-code-response';
+import { GetCustomizedAuthUrlBody } from './customized-auth-url.dto';
+import { GetCustomizedAuthUrlResponse } from './customized-auth-url-response';
 import { GetUserInfo3rdResponse } from './get-user-info-3rd-response';
 
 @ApiTags('third-party')
@@ -78,6 +80,22 @@ export class AuthorizationController {
   @ApiBody({ type: CorpIdToOpenCorpIdDto, required: true })
   @ApiOkResponse({ type: CorpIdToOpenCorpIdResponse })
   public corpid_to_opencorpid() {
+    return null;
+  }
+
+  @Post('/get_customized_auth_url')
+  @ApiOperation({
+    operationId: 'get_customized_auth_url',
+    summary: '获取带参授权链接',
+    description: '获取代开发应用带参授权链接',
+    externalDocs: {
+      url: 'https://developer.work.weixin.qq.com/document/path/95436',
+    },
+  })
+  @ApiQuery({ name: 'provider_access_token', type: 'string', required: true })
+  @ApiBody({ type: GetCustomizedAuthUrlBody, required: true })
+  @ApiOkResponse({ type: GetCustomizedAuthUrlResponse })
+  public get_customized_auth_url() {
     return null;
   }
 
