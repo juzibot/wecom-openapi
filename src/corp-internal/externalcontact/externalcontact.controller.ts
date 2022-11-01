@@ -7,6 +7,8 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { Response } from '../../response';
+import { AddMsgTemplateDto } from './message/add_msg_template-dto';
+import { AddMsgTemplateResponse } from './message/add_msg_template-response';
 import { BatchExternalContactDto } from './batch-external-contact-dto';
 import { BatchExternalContactResponse } from './batch-external-contact-response';
 import { GetExternalContactResponse } from './get-external-contact-response';
