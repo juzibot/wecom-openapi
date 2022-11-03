@@ -43,3 +43,39 @@ export class AddMsgTemplateDto {
   })
   attachments: WelcomeMsgAttachment[];
 }
+
+export class getGroupMsgSendResultDto {
+  @ApiProperty({
+    type: 'string',
+    required: true,
+    description: '企业群发消息的id，可用于获取群发消息发送结果',
+  })
+  msgid: string;
+
+  @ApiProperty({
+    type: 'string',
+    description: '登录用户id',
+    required: true,
+    example: 'zhangsan',
+  })
+  userid: string;
+
+  @ApiProperty({
+    type: 'string',
+    required: false,
+    description:
+      '用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填',
+  })
+  cursor: string;
+
+  @ApiProperty({
+    type: 'number',
+    format: 'int64',
+    required: false,
+    maximum: 1000,
+    default: 500,
+    description:
+      '返回的最大记录数，整型，最大值1000，默认值500，超过最大值时取最大值',
+  })
+  limit: number;
+}
